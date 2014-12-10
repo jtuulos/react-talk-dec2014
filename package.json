@@ -1,0 +1,12 @@
+{
+  "name": "react-talk-dec2014",
+  "version": "0.0.1",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jtuulos/react-talk-dec2014.git"
+  },
+  "author": "Jyri Tuulos <jyri@adroll.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/jtuulos/react-talk-dec2014"
+}
