@@ -8,5 +8,38 @@
   },
   "author": "Jyri Tuulos <jyri@adroll.com>",
   "license": "MIT",
-  "homepage": "https://github.com/jtuulos/react-talk-dec2014"
+  "homepage": "https://github.com/jtuulos/react-talk-dec2014",
+  "devDependencies": {
+    "browserify": "^7.0.0",
+    "browserify-shim": "^3.8.1",
+    "del": "^1.1.0",
+    "gulp": "^3.8.10",
+    "gulp-concat-css": "^1.1.1",
+    "gulp-connect": "^2.2.0",
+    "gulp-load-plugins": "^0.8.0",
+    "highlight.js": "^8.4.0",
+    "object-assign": "^2.0.0",
+    "reveal.js": "^2.6.2",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.0.0",
+    "watchify": "^2.1.1"
+  },
+  "browser": {
+    "head.js": "./node_modules/reveal.js/lib/js/head.min.js",
+    "reveal.js": "./node_modules/reveal.js/js/reveal.js"
+  },
+  "browserify-shim": {
+    "head.js": "head",
+    "reveal.js": {
+      "exports": "Reveal",
+      "depends": [
+        "head.js:head"
+      ]
+    }
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
+  }
 }

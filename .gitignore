@@ -1,0 +1,7 @@
+.DS_Store
+*.log
+.sass-cache
+
+node_modules/
+!node_modules/app
+dist/
