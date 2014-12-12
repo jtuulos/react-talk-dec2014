@@ -74,10 +74,15 @@ gulp.task('styles', function() {
         .pipe($.connect.reload());
 });
 
+gulp.task('plugin:notes', function() {
+    return gulp.src('node_modules/reveal.js/plugin/notes/*')
+        .pipe(gulp.dest('dist/plugin/notes'));
+});
+
 gulp.task('scripts', getAppBuilder());
 gulp.task('scripts:watchify', getAppBuilder({ watchify: true }));
 
-gulp.task('build:noscripts', ['html', 'styles']);
+gulp.task('build:noscripts', ['html', 'styles', 'plugin:notes']);
 
 gulp.task('build', ['build:noscripts', 'scripts']);
 
