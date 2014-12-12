@@ -13,7 +13,8 @@ Reveal.initialize({
     center: true,
 
     theme: 'sky',
-    transition: 'linear'
+    transition: 'fade',
+    transitionSpeed: 'fast'
 });
 
 // Enable syntax highlighting
