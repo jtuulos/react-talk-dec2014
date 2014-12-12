@@ -69,18 +69,22 @@ gulp.task('html', function() {
 
 gulp.task('styles:vendor', function() {
     return gulp.src(VENDOR_STYLES)
-        .pipe($.concatCss('vendor.css'))
+        .pipe($.sourcemaps.init())
+            .pipe($.concat('vendor.css'))
+        .pipe($.sourcemaps.write('.'))
         .pipe(gulp.dest('dist/styles'))
         .pipe($.connect.reload());
 });
 
 gulp.task('styles:main', function() {
     return gulp.src('src/styles/main.scss')
-        .pipe($.sass({
-            outputStyle: 'nested',
-            precision: 10,
-            includePaths: ['node_modules']
-        }))
+        .pipe($.sourcemaps.init())
+            .pipe($.sass({
+                outputStyle: 'nested',
+                precision: 10,
+                includePaths: ['node_modules']
+            }))
+        .pipe($.sourcemaps.write('.'))
         .pipe(gulp.dest('dist/styles'))
         .pipe($.connect.reload());
 });
