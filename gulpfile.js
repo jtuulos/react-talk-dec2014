@@ -62,7 +62,7 @@ gulp.task('clean', function(cb) {
 
 gulp.task('html', function() {
     return gulp.src('src/index.html')
-        .pipe($.fileInclude())
+        .pipe($.fileInclude({ basepath: './src/' }))
         .pipe(gulp.dest('dist'))
         .pipe($.connect.reload());
 });
