@@ -61,7 +61,8 @@ gulp.task('clean', function(cb) {
 });
 
 gulp.task('html', function() {
-    return gulp.src('src/*.html')
+    return gulp.src('src/index.html')
+        .pipe($.fileInclude())
         .pipe(gulp.dest('dist'))
         .pipe($.connect.reload());
 });
@@ -89,7 +90,7 @@ gulp.task('connect', function() {
 });
 
 gulp.task('watch', ['build:noscripts', 'connect', 'scripts:watchify'], function() {
-    gulp.watch('src/*.html', ['html']);
+    gulp.watch('src/**/*.html', ['html']);
 });
 
 gulp.task('default', ['clean'], function() {
