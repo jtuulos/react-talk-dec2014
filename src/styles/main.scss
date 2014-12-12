@@ -1,3 +1,14 @@
 .reveal h1 {
     text-shadow: none;
 }
+
+svg {
+    path, line, polyline {
+        stroke: #000;
+        stroke-width: 4px;
+    }
+
+    path {
+        fill: transparent;
+    }
+}

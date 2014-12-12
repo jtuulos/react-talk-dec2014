@@ -1,5 +1,6 @@
 var Reveal = require('reveal.js'),
-    hljs = require('highlight.js');
+    hljs = require('highlight.js'),
+    drawEffect = require('./scripts/drawEffect');
 
 // Expose reveal.js in global scope for plugins
 window.Reveal = Reveal;
@@ -19,3 +20,19 @@ Reveal.initialize({
 
 // Enable syntax highlighting
 hljs.initHighlightingOnLoad();
+
+
+function tryDrawEffect(el) {
+    var svg = el.querySelector('svg');
+    if (svg && drawEffect.shouldAnimate()) {
+        drawEffect.animatePaths(svg);
+    }
+}
+
+Reveal.addEventListener('slidechanged', function(event) {
+    tryDrawEffect(event.currentSlide);
+});
+
+Reveal.addEventListener('fragmentshown', function(event) {
+    tryDrawEffect(event.fragment);
+});

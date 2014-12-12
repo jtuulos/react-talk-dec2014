@@ -24,11 +24,13 @@
     "reveal.js": "^2.6.2",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.0.0",
+    "vivus": "maxwellito/vivus#v0.1.2",
     "watchify": "^2.1.1"
   },
   "browser": {
     "head.js": "./node_modules/reveal.js/lib/js/head.min.js",
-    "reveal.js": "./node_modules/reveal.js/js/reveal.js"
+    "reveal.js": "./node_modules/reveal.js/js/reveal.js",
+    "vivus": "./node_modules/vivus/dist/vivus.js"
   },
   "browserify-shim": {
     "head.js": "head",
@@ -37,7 +39,8 @@
       "depends": [
         "head.js:head"
       ]
-    }
+    },
+    "vivus": "Vivus"
   },
   "browserify": {
     "transform": [
