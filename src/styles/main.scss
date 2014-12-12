@@ -1,10 +1,8 @@
-.reveal h1 {
-    text-shadow: none;
-}
+@import 'reveal-adroll';
 
 svg {
     path, line, polyline {
-        stroke: #000;
+        stroke: $mainColor;
         stroke-width: 4px;
     }
 

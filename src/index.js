@@ -13,7 +13,6 @@ Reveal.initialize({
     history: true,
     center: true,
 
-    theme: 'sky',
     transition: 'fade',
     transitionSpeed: 'fast'
 });

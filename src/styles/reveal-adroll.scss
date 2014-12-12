@@ -1,0 +1,47 @@
+/**
+ * AdRoll theme for reveal.js
+ */
+
+$adrollBlue: #00adef;
+
+// Default mixins and settings
+@import 'reveal.js/css/theme/template/mixins';
+@import 'reveal.js/css/theme/template/settings';
+
+// Include theme-specific fonts
+@import url(http://fonts.googleapis.com/css?family=Cabin:400,700,400italic,700italic);
+
+// Background of the presentation
+$backgroundColor: #fff;
+@mixin bodyBackground() {
+    @include radial-gradient(darken($backgroundColor, 3%), $backgroundColor);
+}
+
+// Primary/body text
+$mainFont: 'Cabin', 'Helvetica Neue', Helvetica, sans-serif;
+$mainFontSize: 42px;
+$mainColor: #333;
+
+// Headings
+$headingMargin: 0 0 30px 0;
+$headingFont: $mainFont;
+$headingColor: $adrollBlue;
+$headingLetterSpacing: 0.02em;
+$headingTextTransform: none;
+$headingTextShadow: none;
+$heading1TextShadow: $headingTextShadow;
+
+// Links and actions
+$linkColor: darken(#428bca, 6.5%);
+$linkColorHover: darken($linkColor, 15%);
+
+// Text selection
+$selectionBackgroundColor: $adrollBlue;
+$selectionColor: #fff;
+
+// Theme template
+@import 'reveal.js/css/theme/template/theme';
+
+.reveal h1 {
+    color: $mainColor;
+}

@@ -11,7 +11,6 @@ var $ = require('gulp-load-plugins')();
 
 var VENDOR_STYLES = [
     'node_modules/reveal.js/css/reveal.css',
-    'node_modules/reveal.js/css/theme/sky.css',
     'node_modules/highlight.js/styles/zenburn.css'
 ];
 
