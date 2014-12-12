@@ -66,6 +66,12 @@ gulp.task('html', function() {
         .pipe($.connect.reload());
 });
 
+gulp.task('assets', function() {
+    return gulp.src('src/assets/**/*')
+        .pipe(gulp.dest('dist/assets'))
+        .pipe($.connect.reload());
+});
+
 gulp.task('styles:vendor', function() {
     return gulp.src(VENDOR_STYLES)
         .pipe($.sourcemaps.init())
@@ -98,6 +104,7 @@ gulp.task('scripts:watchify', getAppBuilder({ watchify: true }));
 
 gulp.task('build:noscripts', [
     'html',
+    'assets',
     'styles:vendor',
     'styles:main',
     'plugin:notes'
@@ -115,6 +122,7 @@ gulp.task('connect', function() {
 
 gulp.task('watch', ['build:noscripts', 'connect', 'scripts:watchify'], function() {
     gulp.watch('src/**/*.html', ['html']);
+    gulp.watch('src/assets/**/*', ['assets']);
     gulp.watch('src/styles/**/*.scss', ['styles:main']);
 });
 
