@@ -42,12 +42,28 @@ $selectionColor: #fff;
 // Theme template
 @import 'reveal.js/css/theme/template/theme';
 
-.reveal h1 {
-    color: $mainColor;
-}
+.reveal {
+    h1 {
+        color: $mainColor;
+    }
 
-.reveal section img.no-frame {
-    border: none;
-    box-shadow: none;
-    background: none;
+    section {
+        img.no-frame {
+            border: none;
+            box-shadow: none;
+            background: none;
+        }
+
+        // Inverse color styles for slides with dark backgrounds
+        &[data-slide-inverse] {
+            $inverseTextShadow: 0 3px 12px rgba(#000, .3);
+            text-shadow: $inverseTextShadow;
+            color: rgba(#fff, .9);
+
+            h1, h2, h3, h4, h5, h6 {
+                color: #fff;
+                text-shadow: $inverseTextShadow;
+            }
+        }
+    }
 }
