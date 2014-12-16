@@ -4,9 +4,23 @@ svg {
     path, line, polyline {
         stroke: $mainColor;
         stroke-width: 4px;
+        stroke-linejoin: round;
+        stroke-linecap: round;
     }
 
     path {
         fill: transparent;
+    }
+
+    .marker-developer {
+        path, line, polyline {
+            stroke: #22d;
+        }
+    }
+
+    .marker-dispatcher {
+        path, line, polyline {
+            stroke: #d22;
+        }
     }
 }

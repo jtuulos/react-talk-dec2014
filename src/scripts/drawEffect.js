@@ -25,7 +25,7 @@ function animatePaths(el) {
     if (!drawEffects[key]) {
         drawEffects[key] = new Vivus(el, {
             type: 'delayed',
-            duration: 100,
+            duration: 50,
             start: 'manual'
         });
     }
